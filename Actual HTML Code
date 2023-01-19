@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+
+<style>
+
+
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.pt45 {
+    padding-top: 45px;
+}
+
+
+
+.col-12 {
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    max-width: 100%;
+}
+
+.col-12,.col-md-10 {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.justify-content-between {
+    -ms-flex-pack: justify!important;
+    justify-content: space-between!important;
+}
+
+.data-tracking{
+	text-align: center;
+	width: 25%;
+	position: relative;
+	display: block;
+}
+.data-tracking .is-complete{
+	display: block;
+	position: relative;
+	border-radius: 50%;
+	height: 30px;
+	width: 30px;
+	border: 0px solid #AFAFAF;
+	background-color: #f7be16;
+	margin: 0 auto;
+	transition: background 0.25s linear;
+	-webkit-transition: background 0.25s linear;
+	z-index: 2;
+}
+.data-tracking .is-complete:after {
+	display: block;
+	position: absolute;
+	content: '';
+	height: 14px;
+	width: 7px;
+	top: -4px;
+	bottom: 0;
+	left: 8px;
+	margin: auto 0;
+	border: 0px solid #d53939;
+	border-width: 0px 3px 0px 0;
+	transform: rotate(45deg);
+	opacity: 1;
+}
+
+.data-tracking .isnot-complete:after {
+	display: block;
+	position: absolute;
+	content: '';
+	height: 14px;
+	width: 7px;
+	top: 7px;
+	bottom: 0;
+	left: 8px;
+	margin: auto 0;
+	border: 0px solid #d53939;
+	border-width: 0px 0px 0px 3px;
+	transform: rotate(140deg);
+	opacity: 1;
+}
+.data-tracking.completed .is-complete{
+	border-color: #27aa80;
+	border-width: 0px;
+	background-color: #27aa80;
+}
+.data-tracking.completed .is-complete:after {
+	border-color: #fff;
+	border-width: 0px 3px 3px 0;
+	width: 5px;
+	left: 11px;
+    transform: rotate(45deg);
+	opacity: 1;
+}
+.data-tracking p {
+	color: #A4A4A4;
+	font-size: 16px;
+	margin-top: 8px;
+	margin-bottom: 0;
+	line-height: 20px;
+}
+.data-tracking p span{font-size: 14px;}
+.data-tracking.completed p{color: #000;}
+.data-tracking::before {
+	content: '';
+	display: block;
+	height: 3px;
+	width: calc(100% - 40px);
+	background-color: #f7be16;
+	top: 13px;
+	position: absolute;
+	left: calc(-50% + 20px);
+	z-index: 0;
+}
+.data-tracking:first-child:before{display: none;}
+.data-tracking.completed:before{background-color: #27aa80;}
+
+
+</style>
+
+<body>
+
+<div class="container">
+   <div class="row">
+      <div class="col-12 col-md-10 hh-grayBox pt45 pb20">
+         <div class="row justify-content-between">
+            <div class="data-tracking completed">
+               <span class="is-complete"></span>
+               <p>Raw Layer<br><span>2023-01-09</span><br><span>127331</span></p>
+            </div>
+            <div class="data-tracking completed">
+               <span class="is-complete"></span>
+               <p>Staging Layer<br><span>2023-01-09</span><br><span>127331</span></p>
+            </div>
+            <div class="data-tracking">
+               <span class="is-complete"><span class="isnot-complete"></span></span>
+               <p>MSTR Source Table<br><span>2023-01-09</span><br><span>117331</span></p>
+            </div>
+            <div class="data-tracking completed">
+               <span class="is-complete"></span>
+               <p>MSTR Cube<br><span>2023-01-09</span><br><span>113842</span></p>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+
+
+</body>
+</html>
