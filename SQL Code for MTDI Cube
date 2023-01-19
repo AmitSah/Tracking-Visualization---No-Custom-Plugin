@@ -1,0 +1,12 @@
+select 
+"<br>" as line_break 
+,"</span>" as span_end
+,'<div class="container"><div class="row"><div class="col-12 col-md-10 hh-grayBox pt45 pb20"><div class="row justify-content-between">' as data_tracking_div_container
+, '<div class="data-tracking completed">' as data_tracking_matched_div
+,'<div class="data-tracking">' as data_tracking_not_match_div
+, '<span class="is-complete">' as data_tracking_span_tag_circle
+,'<span class="isnot-complete"></span>' as data_tracking_span_tag_not_matched
+,'<p>' as p_tag_start
+,'</p>' as p_tag_end
+,'<span>' as default_span_tag_start
+,'</div>' as div_tag_end
